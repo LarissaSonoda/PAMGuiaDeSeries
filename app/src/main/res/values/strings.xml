@@ -1,3 +1,16 @@
 <resources>
     <string name="app_name">PAMGuiaSeries</string>
+    <string name="pesquisa">Pesquisa</string>
+    <string name="wandavision">WandaVision</string>
+    <string name="tr_s_semanas_ap_s_os_eventos_de_vingadores_ultimato_2019_wanda_maximoff_e_vis_o_est_o_vivendo_uma_vida_suburbana_id_lica_na_cidade_de_westview_no_estado_de_new_jersey_tentando_esconder_suas_verdadeiras_identidades_medida_que_come_am_a_entrar_nas_novas_d_cadas_o_casal_suspeita_que_as_coisas_n_o_s_o_o_que_parecem">Três semanas após os eventos de Vingadores: Ultimato (2019), Wanda Maximoff e Visão estão vivendo uma vida suburbana idílica na cidade de Westview, no estado de New Jersey, tentando esconder suas verdadeiras identidades. À medida que começam a entrar nas novas décadas, o casal suspeita que as coisas não são o que parecem</string>
+    <string name="sinopse">SINOPSE</string>
+    <string name="temporadas_1">Temporadas: 1</string>
+    <string name="logo">logo</string>
+    <string name="the_flash">poster</string>
+    <string name="anne">poster</string>
+    <string name="wanda">poster</string>
+    <string name="busca">busca</string>
+    <string name="voltar">voltar</string>
+    <string name="coment_rios">Comentários</string>
+    <string name="wv2">wv2</string>
 </resources>
