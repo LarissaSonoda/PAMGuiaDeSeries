@@ -62,6 +62,8 @@
         android:id="@+id/logo"
         android:layout_width="79dp"
         android:layout_height="83dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
         android:contentDescription="@string/logo"
         app:layout_constraintBottom_toBottomOf="@+id/textView"
         app:layout_constraintStart_toStartOf="parent"
@@ -71,8 +73,8 @@
 
     <ImageView
         android:id="@+id/TheFlash"
-        android:layout_width="120dp"
-        android:layout_height="208dp"
+        android:layout_width="112dp"
+        android:layout_height="201dp"
         android:layout_marginStart="4dp"
         android:layout_marginLeft="4dp"
         android:contentDescription="@string/the_flash"
@@ -85,8 +87,8 @@
 
     <ImageView
         android:id="@+id/WandaVision"
-        android:layout_width="121dp"
-        android:layout_height="181dp"
+        android:layout_width="109dp"
+        android:layout_height="162dp"
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
         android:contentDescription="@string/wanda"
@@ -97,20 +99,20 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.238"
+        app:layout_constraintVertical_bias="0.239"
         app:srcCompat="@drawable/wandavision__trailer___poster" />
 
     <ImageView
         android:id="@+id/Anne"
-        android:layout_width="121dp"
-        android:layout_height="181dp"
-        android:layout_marginStart="12dp"
-        android:layout_marginLeft="12dp"
+        android:layout_width="110dp"
+        android:layout_height="170dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginLeft="20dp"
         android:contentDescription="@string/anne"
         app:layout_constraintBottom_toBottomOf="@+id/eventos"
         app:layout_constraintStart_toEndOf="@+id/TheFlash"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.239"
+        app:layout_constraintVertical_bias="0.242"
         app:srcCompat="@drawable/anne_poster" />
 
     <ImageView
