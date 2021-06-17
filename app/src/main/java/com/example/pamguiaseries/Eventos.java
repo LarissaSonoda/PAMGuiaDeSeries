@@ -13,8 +13,15 @@ public class Eventos extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_eventos);
     }
-    public void sendMessage(View view){
+
+    //Método para voltar da tela de eventos para a Main Activity, que é a tela principal/inicial
+    public void voltar(View view){
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
+    }
+
+    public void verLocal(View view){
+        
+
     }
 }

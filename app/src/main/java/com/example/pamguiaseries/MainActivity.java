@@ -17,4 +17,8 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this, WandaVision.class);
         startActivity(intent);
     }
+    public void abrirEventos(View view){
+        Intent eventos = new Intent(this, Eventos.class);
+        startActivity(eventos);
+    }
 }
