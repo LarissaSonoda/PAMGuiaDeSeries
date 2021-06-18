@@ -22,4 +22,5 @@
     <string name="ingressos">ingressos</string>
     <string name="local">Local</string>
     <string name="agendar">agendar</string>
+    <string name="eventos">Eventos</string>
 </resources>
