@@ -23,4 +23,7 @@
     <string name="local">Local</string>
     <string name="agendar">agendar</string>
     <string name="eventos">Eventos</string>
+    <string name="d23">D23 - Disney</string>
+    <string name="d23_expo">d23_expo</string>
+    <string name="local_anaheim_california">Local: Anaheim California</string>
 </resources>

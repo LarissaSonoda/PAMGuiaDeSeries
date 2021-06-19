@@ -36,4 +36,10 @@ public class Eventos extends AppCompatActivity {
         intent.setData(CalendarContract.Events.CONTENT_URI);
         startActivity(intent);
     }
+
+    public void localD23(View view){
+        Uri d23 = Uri.parse("geo:0,0?q=Anaheim+,+California+,+EUA");
+        Intent local = new Intent(Intent.ACTION_VIEW, d23);
+        startActivity(local);
+    }
 }
