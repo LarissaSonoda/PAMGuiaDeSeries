@@ -9,15 +9,23 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.PAMGuiaSeries">
-        <activity android:name=".Eventos"></activity>
+        <activity android:name=".perfilUser"></activity>
+        <activity android:name=".ActivityMonster" />
+        <activity android:name=".cadastro" />
+        <activity android:name=".Eventos" />
         <activity android:name=".WandaVision" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <action android:name="android.intent.action.SEARCH" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
     </application>
 
 </manifest>

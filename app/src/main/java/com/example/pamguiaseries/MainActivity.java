@@ -40,5 +40,14 @@ public class MainActivity extends AppCompatActivity {
         startActivity(busca);
     }
 
+    public void abrirPerfil(View view){
+        Intent perfil = new Intent(this, perfilUser.class);
+        startActivity(perfil);
+    }
+
+    public void abrirAnime(View view){
+        Intent monster=new Intent(this, ActivityMonster.class);
+        startActivity(monster);
+    }
 
 }

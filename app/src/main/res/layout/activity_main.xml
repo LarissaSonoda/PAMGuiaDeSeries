@@ -19,8 +19,8 @@
 
     <TextView
         android:id="@+id/textView2"
-        android:layout_width="445dp"
-        android:layout_height="89dp"
+        android:layout_width="413dp"
+        android:layout_height="113dp"
         android:background="#9A240A"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -34,6 +34,7 @@
         android:layout_height="88dp"
         android:layout_marginStart="88dp"
         android:layout_marginLeft="88dp"
+        android:layout_marginBottom="16dp"
         android:onClick="abrirEventos"
         app:backgroundTint="@android:color/transparent"
         app:icon="@drawable/baseline_insert_invitation_18"
@@ -43,7 +44,7 @@
         app:iconTint="#f2ac34"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.375"
+        app:layout_constraintHorizontal_bias="0.421"
         app:layout_constraintStart_toEndOf="@+id/perfil" />
 
     <Button
@@ -53,6 +54,8 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="48dp"
         android:layout_marginLeft="48dp"
+        android:layout_marginBottom="16dp"
+        android:onClick="abrirPerfil"
         app:backgroundTint="@android:color/transparent"
         app:icon="@drawable/baseline_account_circle_18"
         app:iconPadding="0dp"
@@ -75,7 +78,22 @@
         app:srcCompat="@drawable/pipoca" />
 
     <ImageView
-        android:id="@+id/TheFlash"
+        android:id="@+id/evangelion"
+        android:layout_width="124dp"
+        android:layout_height="197dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginLeft="4dp"
+        android:contentDescription="@string/evangelion_poster"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.491"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/textView"
+        app:layout_constraintVertical_bias="0.7"
+        app:srcCompat="@drawable/evangelion" />
+
+    <ImageView
+        android:id="@+id/theFlash"
         android:layout_width="124dp"
         android:layout_height="197dp"
         android:layout_marginStart="4dp"
@@ -90,7 +108,23 @@
         app:srcCompat="@drawable/the_flash_solo_poster_print__24_x_36_" />
 
     <ImageView
-        android:id="@+id/WandaVision"
+        android:id="@+id/DevilmanCrybaby"
+        android:layout_width="124dp"
+        android:layout_height="192dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginLeft="12dp"
+        android:contentDescription="@string/devilman_poster"
+        android:padding="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/evangelion"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.693"
+        app:srcCompat="@drawable/devilman_crybaby" />
+
+    <ImageView
+        android:id="@+id/wandaVision"
         android:layout_width="124dp"
         android:layout_height="192dp"
         android:layout_marginStart="12dp"
@@ -99,7 +133,7 @@
         android:onClick="abrirSerie"
         android:padding="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/TheFlash"
+        app:layout_constraintEnd_toStartOf="@+id/evangelion"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -114,10 +148,23 @@
         android:layout_marginLeft="8dp"
         android:contentDescription="@string/anne"
         app:layout_constraintBottom_toBottomOf="@+id/eventos"
-        app:layout_constraintStart_toEndOf="@+id/TheFlash"
+        app:layout_constraintStart_toEndOf="@+id/evangelion"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.212"
         app:srcCompat="@drawable/anne_poster" />
+
+    <ImageView
+        android:id="@+id/monster"
+        android:layout_width="129dp"
+        android:layout_height="241dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:contentDescription="@string/monster_poster"
+        app:layout_constraintBottom_toBottomOf="@+id/eventos"
+        app:layout_constraintStart_toEndOf="@+id/evangelion"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.739"
+        app:srcCompat="@drawable/monster" />
 
     <ImageButton
         android:id="@+id/btnBusca"
@@ -148,6 +195,7 @@
         app:layout_constraintBottom_toBottomOf="@+id/textView"
         app:layout_constraintEnd_toStartOf="@+id/btnBusca"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.37" />
+        app:layout_constraintVertical_bias="0.37"
+        android:autofillHints="" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

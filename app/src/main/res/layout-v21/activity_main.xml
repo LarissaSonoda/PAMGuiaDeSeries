@@ -87,7 +87,7 @@
         app:srcCompat="@drawable/pipoca" />
 
     <ImageView
-        android:id="@+id/TheFlash"
+        android:id="@+id/evangelion"
         android:layout_width="124dp"
         android:layout_height="197dp"
         android:layout_marginStart="4dp"
@@ -102,7 +102,7 @@
         app:srcCompat="@drawable/the_flash_solo_poster_print__24_x_36_" />
 
     <ImageView
-        android:id="@+id/WandaVision"
+        android:id="@+id/DevilmanCrybaby"
         android:layout_width="124dp"
         android:layout_height="192dp"
         android:layout_marginStart="12dp"
@@ -111,7 +111,7 @@
         android:onClick="abrirSerie"
         android:padding="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/TheFlash"
+        app:layout_constraintEnd_toStartOf="@+id/evangelion"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -126,7 +126,7 @@
         android:layout_marginLeft="8dp"
         android:contentDescription="@string/anne"
         app:layout_constraintBottom_toBottomOf="@+id/eventos"
-        app:layout_constraintStart_toEndOf="@+id/TheFlash"
+        app:layout_constraintStart_toEndOf="@+id/evangelion"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.212"
         app:srcCompat="@drawable/anne_poster" />

@@ -24,13 +24,14 @@ public class Eventos extends AppCompatActivity {
         startActivity(intent);
     }
 
-    //método onClick para ver o local do evento CCXP
+    //método onClick para ver o local do evento CCXP (intent implícita)
     public void verLocal(View view){
         Uri location = Uri.parse("geo:0,0?q=São+Paulo+Expo+-+Rod.+dos+Imigrantes+-+Vila+Água+Funda,+São+Paulo+-+SP");
         Intent mapaLocal = new Intent(Intent.ACTION_VIEW, location);
         startActivity(Intent.createChooser(mapaLocal, "Mapa"));
     }
 
+    //abrir a agenda para marcar a data do evento (intent implicita)
     public void abrirAgenda(View view){
        Intent intent = new Intent(Intent.ACTION_INSERT);
         intent.setData(CalendarContract.Events.CONTENT_URI);

@@ -26,13 +26,14 @@
         android:id="@+id/Title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/alfa_slab_one"
         android:text="@string/wandavision"
         android:textColor="@color/red"
         android:textSize="36sp"
         android:typeface="monospace"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.283"
+        app:layout_constraintHorizontal_bias="0.242"
         app:layout_constraintStart_toEndOf="@+id/btnVoltar"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -54,6 +55,7 @@
         android:layout_height="194dp"
         android:layout_marginTop="20dp"
         android:text="@string/tr_s_semanas_ap_s_os_eventos_de_vingadores_ultimato_2019_wanda_maximoff_e_vis_o_est_o_vivendo_uma_vida_suburbana_id_lica_na_cidade_de_westview_no_estado_de_new_jersey_tentando_esconder_suas_verdadeiras_identidades_medida_que_come_am_a_entrar_nas_novas_d_cadas_o_casal_suspeita_que_as_coisas_n_o_s_o_o_que_parecem"
+        android:textColor="#131313"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.578"
         app:layout_constraintStart_toEndOf="@+id/imageView2"
@@ -103,6 +105,7 @@
         android:layout_height="66dp"
         android:layout_marginTop="12dp"
         android:text="@string/n_o_a_toa_que_a_marvel_chamada_de_a_casa_das_ideias_wandavision_uma_homenagem_as_series_de_sitcom_feita_com_muita_criatividade_inova_o_e_uma_qualidade_de_filme_blockbuster"
+        android:textColor="#0E0E0E"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.487"
         app:layout_constraintStart_toStartOf="parent"
@@ -121,13 +124,15 @@
         app:layout_constraintBottom_toTopOf="@+id/textView3"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView4"
-        app:layout_constraintVertical_bias="0.076" />
+        app:layout_constraintVertical_bias="0.076"
+        tools:targetApi="lollipop" />
 
     <ImageView
         android:id="@+id/imageView3"
         android:layout_width="166dp"
         android:layout_height="122dp"
         android:layout_marginTop="28dp"
+        android:contentDescription="@string/abrir_trailer_youtube"
         android:onClick="abrirTrailer"
         app:layout_constraintEnd_toStartOf="@+id/imageView4"
         app:layout_constraintStart_toStartOf="parent"
@@ -141,11 +146,39 @@
         android:layout_marginTop="20dp"
         android:layout_marginEnd="32dp"
         android:layout_marginRight="32dp"
+        android:contentDescription="@string/assistir_no_disney"
+        android:onClick="abrirDisney"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView5"
         app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@drawable/disney_plus" />
+
+    <TextView
+        android:id="@+id/textView13"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="@string/trailer"
+        android:textColor="#040303"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.253"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView3" />
+
+    <TextView
+        android:id="@+id/textView14"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="@string/assistir_s_rie"
+        android:textColor="#0E0E0E"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.833"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView3" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
