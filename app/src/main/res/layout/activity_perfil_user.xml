@@ -13,6 +13,7 @@
         android:layout_height="61dp"
         android:background="@android:color/transparent"
         android:contentDescription="@string/voltar"
+        android:onClick="voltar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -20,35 +21,26 @@
         app:srcCompat="?attr/actionModeCloseDrawable"
         app:tint="@color/red" />
 
-    <ImageView
-        android:id="@+id/imageView9"
-        android:layout_width="159dp"
-        android:layout_height="156dp"
-        android:layout_marginTop="104dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:srcCompat="@tools:sample/avatars" />
-
     <TextView
         android:id="@+id/email_user"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="72dp"
-        android:text="Email: "
+        android:layout_marginTop="64dp"
+        android:text="@string/email"
         android:textColor="#000000"
-        android:textSize="16sp"
+        android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.143"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView9" />
+        app:layout_constraintTop_toBottomOf="@+id/imageView10" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/btnsair"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="232dp"
-        android:text="Sair da conta"
+        android:layout_marginBottom="228dp"
+        android:onClick="btnSair"
+        android:text="@string/sair_da_conta"
         android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -58,12 +50,48 @@
         android:id="@+id/textView20"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="Nome de usuário:"
+        android:layout_marginTop="20dp"
+        android:text="@string/nome_de_usu_rio"
         android:textColor="#000000"
-        android:textSize="16sp"
+        android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.176"
+        app:layout_constraintHorizontal_bias="0.192"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/email_user" />
+
+    <TextView
+        android:id="@+id/username"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="@string/larissa_e_dude"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.206"
+        app:layout_constraintStart_toEndOf="@+id/textView20"
+        app:layout_constraintTop_toBottomOf="@+id/emailUser" />
+
+    <TextView
+        android:id="@+id/emailUser"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="64dp"
+        android:text="@string/dude_lari_email_com"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.136"
+        app:layout_constraintStart_toEndOf="@+id/email_user"
+        app:layout_constraintTop_toBottomOf="@+id/imageView10" />
+
+    <ImageView
+        android:id="@+id/imageView10"
+        android:layout_width="178dp"
+        android:layout_height="203dp"
+        android:layout_marginTop="60dp"
+        android:contentDescription="@string/account_user"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/conta" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -8,6 +8,15 @@ import android.view.View;
 
 public class cadastro extends AppCompatActivity {
 
+    private String someVariable;
+
+    public String getSomeVariable() {
+        return someVariable;
+    }
+
+    public void setSomeVariable(String someVariable) {
+        this.someVariable = someVariable;
+    }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

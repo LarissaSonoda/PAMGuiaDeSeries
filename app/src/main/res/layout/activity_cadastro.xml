@@ -8,10 +8,10 @@
     tools:context=".cadastro">
 
     <TextView
-        android:id="@+id/textView15"
+        android:id="@+id/txtcadastro"
         android:layout_width="187dp"
         android:layout_height="63dp"
-        android:layout_marginTop="88dp"
+        android:layout_marginTop="172dp"
         android:fontFamily="@font/alfa_slab_one"
         android:text="@string/cadastro"
         android:textColor="@color/amarelo"
@@ -38,13 +38,13 @@
         app:layout_constraintHorizontal_bias="0.725"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/edtNome"
-        app:layout_constraintVertical_bias="0.8" />
+        app:layout_constraintVertical_bias="1.0" />
 
     <EditText
         android:id="@+id/edtSenha"
         android:layout_width="272dp"
         android:layout_height="49dp"
-        android:layout_marginBottom="264dp"
+        android:layout_marginBottom="200dp"
         android:ems="10"
         android:hint="@string/digite_sua_senha"
         android:inputType="textPassword"
@@ -70,13 +70,13 @@
         app:layout_constraintHorizontal_bias="0.672"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.294" />
+        app:layout_constraintVertical_bias="0.408" />
 
     <Button
         android:id="@+id/btnCadastrar"
         android:layout_width="141dp"
         android:layout_height="54dp"
-        android:layout_marginTop="68dp"
+        android:layout_marginTop="60dp"
         android:background="@color/red"
         android:onClick="abrirMain"
         android:text="@string/cadastrar"
@@ -85,5 +85,16 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/edtSenha" />
+
+    <ImageView
+        android:id="@+id/imageView7"
+        android:layout_width="113dp"
+        android:layout_height="147dp"
+        app:layout_constraintBottom_toTopOf="@+id/txtcadastro"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0"
+        app:srcCompat="@drawable/pipoca" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -160,6 +160,7 @@
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
         android:contentDescription="@string/monster_poster"
+        android:onClick="abrirAnime"
         app:layout_constraintBottom_toBottomOf="@+id/eventos"
         app:layout_constraintStart_toEndOf="@+id/evangelion"
         app:layout_constraintTop_toTopOf="parent"

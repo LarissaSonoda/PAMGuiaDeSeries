@@ -7,6 +7,51 @@
     android:background="@color/bg"
     tools:context=".MainActivity">
 
+    <ImageView
+        android:id="@+id/devilmanCrybaby"
+        android:layout_width="124dp"
+        android:layout_height="192dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginLeft="12dp"
+        android:contentDescription="@string/devilman_poster"
+        android:padding="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/evangelion"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.693"
+        app:srcCompat="@drawable/devilman_crybaby" />
+
+    <ImageView
+        android:id="@+id/evangelion2"
+        android:layout_width="124dp"
+        android:layout_height="197dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginLeft="4dp"
+        android:contentDescription="@string/evangelion_poster"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.491"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/textView"
+        app:layout_constraintVertical_bias="0.7"
+        app:srcCompat="@drawable/evangelion" />
+
+    <ImageView
+        android:id="@+id/monster2"
+        android:layout_width="129dp"
+        android:layout_height="241dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginLeft="4dp"
+        android:contentDescription="@string/monster_poster"
+        android:onClick="abrirAnime"
+        app:layout_constraintBottom_toBottomOf="@+id/eventos"
+        app:layout_constraintStart_toEndOf="@+id/evangelion"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.714"
+        app:srcCompat="@drawable/monster" />
+
     <TextView
         android:id="@+id/textView"
         android:layout_width="412dp"
@@ -31,8 +76,8 @@
 
     <TextView
         android:id="@+id/textView2"
-        android:layout_width="445dp"
-        android:layout_height="89dp"
+        android:layout_width="417dp"
+        android:layout_height="104dp"
         android:background="#9A240A"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -42,8 +87,8 @@
 
         android:id="@+id/eventos"
         style="?android:attr/borderlessButtonStyle"
-        android:layout_width="107dp"
-        android:layout_height="88dp"
+        android:layout_width="109dp"
+        android:layout_height="96dp"
         android:layout_marginStart="88dp"
         android:layout_marginLeft="88dp"
         android:onClick="abrirEventos"
@@ -61,10 +106,11 @@
     <Button
         android:id="@+id/perfil"
         style="?android:attr/borderlessButtonStyle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="107dp"
+        android:layout_height="102dp"
         android:layout_marginStart="48dp"
         android:layout_marginLeft="48dp"
+        android:onClick="abrirPerfil"
         app:backgroundTint="@android:color/transparent"
         app:icon="@drawable/baseline_account_circle_18"
         app:iconPadding="0dp"

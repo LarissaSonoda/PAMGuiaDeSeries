@@ -55,6 +55,7 @@
         android:layout_height="61dp"
         android:background="@android:color/transparent"
         android:contentDescription="@string/voltar"
+        android:onClick="voltar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -118,6 +119,7 @@
         android:layout_height="130dp"
         android:layout_marginStart="20dp"
         android:layout_marginLeft="20dp"
+        android:onClick="abrirTrailer"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView18"
@@ -126,8 +128,9 @@
 
     <ImageView
         android:id="@+id/crunchyroll"
-        android:layout_width="107dp"
-        android:layout_height="118dp"
+        android:layout_width="103dp"
+        android:layout_height="125dp"
+        android:onClick="abrirCrunchyroll"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/youTube"
         app:layout_constraintTop_toBottomOf="@+id/textView18"
