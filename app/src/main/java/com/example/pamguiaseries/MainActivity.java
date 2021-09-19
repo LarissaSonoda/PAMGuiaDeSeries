@@ -1,14 +1,13 @@
 package com.example.pamguiaseries;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.app.SearchManager;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
-import android.view.KeyEvent;
 import android.view.View;
 import android.widget.EditText;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -45,6 +44,10 @@ public class MainActivity extends AppCompatActivity {
         startActivity(perfil);
     }
 
+    public void abrirLojas(View view){
+        Intent lojas = new Intent(this, lojas.class);
+        startActivity(lojas);
+    }
     public void abrirAnime(View view){
         Intent monster=new Intent(this, ActivityMonster.class);
         startActivity(monster);

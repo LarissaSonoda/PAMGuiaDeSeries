@@ -100,7 +100,7 @@
         app:iconTint="#f2ac34"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.375"
+        app:layout_constraintHorizontal_bias="0.567"
         app:layout_constraintStart_toEndOf="@+id/perfil" />
 
     <Button
@@ -108,8 +108,8 @@
         style="?android:attr/borderlessButtonStyle"
         android:layout_width="107dp"
         android:layout_height="102dp"
-        android:layout_marginStart="48dp"
-        android:layout_marginLeft="48dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginLeft="28dp"
         android:onClick="abrirPerfil"
         app:backgroundTint="@android:color/transparent"
         app:icon="@drawable/baseline_account_circle_18"
@@ -191,6 +191,19 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.491"
         app:srcCompat="@android:drawable/ic_menu_search" />
+
+    <Button
+        android:id="@+id/btnLojas"
+        style="?android:attr/borderlessButtonStyle"
+        android:layout_width="119dp"
+        android:layout_height="105dp"
+        android:onClick="abrirLojas"
+        app:backgroundTint="@android:color/transparent"
+        app:icon="@drawable/_105931_add_to_cart_buy_cart_sell_shop_shopping_cart_113919"
+        app:iconTint="@color/amarelo"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/eventos"
+        app:layout_constraintStart_toEndOf="@+id/perfil" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

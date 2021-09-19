@@ -35,6 +35,9 @@
     <string name="assistir_no_disney">assistir no disney +</string>
     <string name="cadastro">Cadastro</string>
     <string name="digite_seu_nome">Digite seu nome</string>
+    <string name="endereco_text">"Endereço: %1$s "</string>
+    <string name="cancel_busca">Cancelar Busca</string>
+    <string name="loading">Carregando…</string>
     <string name="digite_seu_email">Digite seu Email</string>
     <string name="digite_sua_senha">Digite sua senha</string>
     <string name="cadastrar">Cadastrar</string>
@@ -48,4 +51,10 @@
     <string name="larissa_e_dude">Larissa e Dude</string>
     <string name="user_photo">user_photo</string>
     <string name="account_user">account_user</string>
+    <string name="buscar_lojas">Buscar Lojas</string>
+    <string name="lojas_pr_ximas_a_voc">Lojas Próximas a você!</string>
+    <string name="no_address_found">noaddress</string>
+    <string name="invalid_lat_long_used">invalidlatlongused</string>
+    <string name="service_not_available">notavaiable</string>
+    <string name="permissao_negada">Permissão negada! Autorize a aplicação</string>
 </resources>

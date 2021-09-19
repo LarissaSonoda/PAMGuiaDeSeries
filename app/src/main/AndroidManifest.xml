@@ -2,6 +2,13 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.pamguiaseries">
 
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <uses-feature
+        android:name="android.hardware.accelerometer"
+        android:required="true" />
+
     <application
         android:allowBackup="true"
         android:icon="@drawable/pipoca"
@@ -9,7 +16,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.PAMGuiaSeries">
-        <activity android:name=".perfilUser"></activity>
+        <activity android:name=".lojas"></activity>
+        <activity android:name=".perfilUser" />
         <activity android:name=".ActivityMonster" />
         <activity android:name=".MainActivity" />
         <activity android:name=".Eventos" />
