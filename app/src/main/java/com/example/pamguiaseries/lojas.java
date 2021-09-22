@@ -2,15 +2,15 @@ package com.example.pamguiaseries;
 
 import android.Manifest;
 import android.annotation.SuppressLint;
+import android.app.SearchManager;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
-import android.hardware.Sensor;
-import android.hardware.SensorEvent;
-import android.hardware.SensorEventListener;
-import android.hardware.SensorManager;
+import android.location.Address;
+import android.location.Geocoder;
+import android.location.Location;
 import android.os.Bundle;
 import android.view.View;
-import android.webkit.WebView;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -22,36 +22,41 @@ import androidx.core.app.ActivityCompat;
 import com.google.android.gms.location.FusedLocationProviderClient;
 import com.google.android.gms.location.LocationCallback;
 import com.google.android.gms.location.LocationRequest;
+import com.google.android.gms.location.LocationResult;
 import com.google.android.gms.location.LocationServices;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 
-public class lojas extends AppCompatActivity implements SensorEventListener, FetchAddressTask.OnTaskCompleted {
+import java.io.IOException;
+import java.util.List;
+import java.util.Locale;
+
+public class lojas extends AppCompatActivity implements FetchAddressTask.OnTaskCompleted {
     // Arquivo shared preferences
     public static final String PREFERENCIAS_NAME = "com.example.android.localizacao";
     private static final String TRACKING_LOCATION_KEY = "tracking_location";
     // Constantes
     private static final int REQUEST_LOCATION_PERMISSION = 1;
+    private static final String LASTADRESS_KEY = "adress";
     private static final String LATITUDE_KEY = "latitude";
     private static final String LONGITUDE_KEY = "longitude";
-    private static final String LASTDATE_KEY = "data";
 
     // classes Location
     private boolean mTrackingLocation;
 
-//Acelerometro
 
-    private SensorManager sensorManager;
-
-    private Sensor acelerometro;
     // Shared preferences
     private SharedPreferences mPreferences;
     private String lastLatitude = "";
     private String lastLongitude = "";
     private String lastAdress = "";
+
+
     private FusedLocationProviderClient mFusedLocationClient;
     private LocationCallback mLocationCallback;
     private TextView mLocationTextView;
-    private WebView mWebView;
     private Button mLocationBtn;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,8 +65,35 @@ public class lojas extends AppCompatActivity implements SensorEventListener, Fet
         mFusedLocationClient = LocationServices.getFusedLocationProviderClient(
                 this);
         mLocationTextView = (TextView) findViewById(R.id.infosLocal);
-        mWebView = (WebView) findViewById(R.id.webView_lojas);
-        mLocationBtn = (Button) findViewById(R.id.btn_buscarlojas);
+        mLocationBtn = (Button) findViewById(R.id.btn_buscarlocal);
+
+        mFusedLocationClient = LocationServices.getFusedLocationProviderClient(
+                this);
+
+        // Recupera o estado da aplicação quando é recriado
+        if (savedInstanceState != null) {
+            mTrackingLocation = savedInstanceState.getBoolean(
+                    TRACKING_LOCATION_KEY);
+        }
+
+
+// Inicializa os callbacks da locations.
+        mLocationCallback = new LocationCallback() {
+            /**
+             * This is the callback that is triggered when the
+             * FusedLocationClient atualiza a localização.
+             * @param locationResult The result containing the device location.
+             */
+            @Override
+            public void onLocationResult(LocationResult locationResult) {
+                // If tracking is turned on, reverse geocode into an address
+                if (mTrackingLocation) {
+                    new FetchAddressTask(lojas.this, lojas.this)
+                            .execute(locationResult.getLastLocation());
+                }
+            }
+        };
+
 
         mLocationBtn.setOnClickListener(new View.OnClickListener() {
             /**
@@ -72,16 +104,18 @@ public class lojas extends AppCompatActivity implements SensorEventListener, Fet
             public void onClick(View v) {
                 if (!mTrackingLocation) {
                     iniciarLocal();
+                    //Intent it = new Intent(Intent.ACTION_WEB_SEARCH);
+                    //it.putExtra(SearchManager.QUERY, "Lojas Geek próximas "+ lastAdress);
+                    //startActivity(it);
                 } else {
                     pararLocal();
                 }
             }
         });
-        //recupera o sensor default e chama o meto de listagem de sensores
-      //  sensorManager = (SensorManager) getSystemService(Context.SENSOR_SERVICE);
-       // acelerometro = sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
-
-       // sensorManager.registerListener(this, acelerometro, SensorManager.SENSOR_DELAY_NORMAL);
+        //inicializa as preferências do usuário
+        mPreferences = getSharedPreferences(PREFERENCIAS_NAME, MODE_PRIVATE);
+        //recupera as preferencias
+        recuperar();
 
 
     }
@@ -109,28 +143,65 @@ public class lojas extends AppCompatActivity implements SensorEventListener, Fet
     }
 
     private LocationRequest getLocationRequest() {
-        LocationRequest locationRequest = new LocationRequest();
+       LocationRequest locationRequest = new LocationRequest();
         locationRequest.setInterval(10000);
         locationRequest.setFastestInterval(5000);
-        locationRequest.setPriority(LocationRequest.PRIORITY_HIGH_ACCURACY);
+        locationRequest.setPriority(LocationRequest.PRIORITY_LOW_POWER);
         return locationRequest;
     }
 
-    @SuppressLint({"StringFormatInvalid", "StringFormatMatches"})
     private void iniciarLocal(){
         if(ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION)!= PackageManager.PERMISSION_GRANTED){
             ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.ACCESS_COARSE_LOCATION}, REQUEST_LOCATION_PERMISSION);
         }else{
-            mLocationTextView.setText(getString(R.string.endereco_text,
-                    getString(R.string.loading), null, null,
-                    System.currentTimeMillis()));
+            mTrackingLocation = true;
+            mFusedLocationClient.requestLocationUpdates
+                    (getLocationRequest(),
+                            mLocationCallback,
+                            null /* Looper */);
+            mFusedLocationClient.getLastLocation().addOnCompleteListener(
+                    new OnCompleteListener<Location>() {
+                        @Override
+                        public void onComplete(@NonNull Task<Location> task) {
+                            Location location= task.getResult();
+                            if(location != null) {
+                                Geocoder geocoder = new Geocoder(lojas.this,
+                                        Locale.getDefault());
+                                try {
+                                    List<Address> adresses = geocoder.getFromLocation(
+                                            location.getLatitude(), location.getLongitude(), 1);
+                                    adresses.get(0).getCountryName();
+                                    SharedPreferences preferences = getSharedPreferences(PREFERENCIAS_NAME, 0);
 
-            String local_pesq = getString(R.string.endereco_text);
-            local_pesq.replace(" ", "+");
-           // Intent busca = new Intent(Intent.ACTION_WEB_SEARCH);
-            //Uri localLoja = Uri.parse("https://www.google.com.br/search?q=lojas+geek+" + local_pesq);
-            mWebView.loadUrl("https://www.google.com.br/search?q=lojas+geek+" + local_pesq);
+                                }
+                                catch(IOException e){
+                                    e.printStackTrace();
+                                }
+                            }
+
+                        }
+                    }
+            );
+
+            mLocationTextView.setText(getString(R.string.endereco_text,
+                   getString(R.string.loading), null, null));
+            Intent it = new Intent(Intent.ACTION_WEB_SEARCH);
+            it.putExtra(SearchManager.QUERY, "Lojas Geek próximas "+ lastAdress);
+            startActivity(it);
         }
+    }
+
+
+  //  @SuppressLint("StringFormatMatches")
+   // public void buscar_loja (View v){
+      //  Intent it = new Intent(Intent.ACTION_WEB_SEARCH);
+       // it.putExtra(SearchManager.QUERY, "Lojas Geek próximas "+ lastAdress);
+       // startActivity(it);
+  //  }
+
+    public void back(View view){
+        Intent voltar = new Intent(this, MainActivity.class);
+        startActivity(voltar);
     }
 
     private void pararLocal() {
@@ -140,23 +211,62 @@ public class lojas extends AppCompatActivity implements SensorEventListener, Fet
         }
     }
 
+
+
+
     @Override
     public void onTaskCompleted(String[] result) {
         if (mTrackingLocation) {
             // Update the UI
             lastAdress = result[0];
+            lastLatitude = result[1];
+            lastLongitude = result[2];
             mLocationTextView.setText(getString(R.string.endereco_text,
-                    lastAdress));
+                    lastAdress, lastLatitude, lastLongitude));
         }
     }
 
     @Override
-    public void onSensorChanged(SensorEvent event) {
+    protected void onSaveInstanceState(Bundle outState) {
+        outState.putBoolean(TRACKING_LOCATION_KEY, mTrackingLocation);
+        super.onSaveInstanceState(outState);
+    }
 
+    //Armazena as preferencias do usuário
+    //na aplicação será armazenada a última localização
+
+    private void armazenar(String latitude, String longitude, String lastAdress) {
+        SharedPreferences.Editor preferencesEditor = mPreferences.edit();
+        preferencesEditor.putString(LASTADRESS_KEY, lastAdress);
+        preferencesEditor.putString(LATITUDE_KEY, latitude);
+        preferencesEditor.putString(LONGITUDE_KEY, longitude);
+        preferencesEditor.apply();
     }
 
     @Override
-    public void onAccuracyChanged(Sensor sensor, int accuracy) {
+    protected void onPause() {
+        if (mTrackingLocation) {
+            pararLocal();
+            mTrackingLocation = true;
+            armazenar(lastLatitude, lastLongitude, lastAdress);
+        }
+        super.onPause();
+    }
+    @Override
+    protected void onResume() {
+        if (mTrackingLocation) {
+            iniciarLocal();
+        }
+        recuperar();
+        super.onResume();
+    }
 
+    @SuppressLint("StringFormatMatches")
+    private void recuperar() {
+        SharedPreferences mPreferences = getSharedPreferences(PREFERENCIAS_NAME, 0);
+        lastAdress = mPreferences.getString(LASTADRESS_KEY, "");
+        lastLatitude = mPreferences.getString(LATITUDE_KEY, "");
+        lastLongitude = mPreferences.getString(LONGITUDE_KEY, "");
+        Toast.makeText(this, getString(R.string.endereco_text, lastAdress, lastLongitude, lastLatitude), Toast.LENGTH_SHORT).show();
     }
 }

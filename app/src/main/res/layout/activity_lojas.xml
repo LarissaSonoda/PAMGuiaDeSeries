@@ -12,10 +12,27 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
-        android:layout_marginEnd="60dp"
-        android:layout_marginRight="60dp"
+        android:layout_marginEnd="48dp"
+        android:layout_marginRight="48dp"
         android:fontFamily="@font/alfa_slab_one"
-        android:text="Lojas Próximas"
+        android:text="@string/lojas_pr_ximas"
+        android:textColor="@color/red"
+        android:textSize="36sp"
+        android:typeface="monospace"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.242"
+        app:layout_constraintStart_toEndOf="@+id/btnVoltar"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/txtParceiros"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="356dp"
+        android:layout_marginEnd="40dp"
+        android:layout_marginRight="40dp"
+        android:fontFamily="@font/alfa_slab_one"
+        android:text="@string/nossos_parceiros"
         android:textColor="@color/red"
         android:textSize="36sp"
         android:typeface="monospace"
@@ -25,11 +42,12 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageButton
-        android:id="@+id/btnVoltar5"
+        android:id="@+id/btnVoltar_lojas"
         android:layout_width="52dp"
         android:layout_height="61dp"
         android:background="@android:color/transparent"
         android:contentDescription="@string/voltar"
+        android:onClick="back"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -38,35 +56,27 @@
         app:tint="@color/red" />
 
     <Button
-        android:id="@+id/btn_buscarlojas"
+        android:id="@+id/btn_buscarlocal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="268dp"
         android:text="@string/buscar_lojas"
         app:backgroundTint="@color/black"
-        app:layout_constraintBottom_toTopOf="@+id/webView_lojas"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.939"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.902" />
-
-    <WebView
-        android:id="@+id/webView_lojas"
-        android:layout_width="417dp"
-        android:layout_height="602dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.666"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/infosLocal"
-        android:layout_width="205dp"
-        android:layout_height="59dp"
+        android:layout_width="340dp"
+        android:layout_height="192dp"
+        android:layout_marginTop="16dp"
         android:text="@string/endereco_text"
-        app:layout_constraintBottom_toTopOf="@+id/webView_lojas"
-        app:layout_constraintEnd_toStartOf="@+id/btn_buscarlojas"
-        app:layout_constraintHorizontal_bias="0.753"
+        android:textColor="#121212"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtLoja" />
 

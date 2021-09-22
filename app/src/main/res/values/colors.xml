@@ -3,7 +3,13 @@
     <color name="red">#9A240A</color>
     <color name="amarelo">#F2AC34</color>
     <color name="teal_200">#F4F4F4</color>
+    <color name="amarelo_darkmode">#F0E68C</color>
+    <color name="botoes_darkmode">#A9A9A9</color>
+
+    // background
     <color name="bg">#FAEEE0</color>
+    <color name="bg2">#1C1C1C</color>
+
     <color name="purple_500">#0c0c0c</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>

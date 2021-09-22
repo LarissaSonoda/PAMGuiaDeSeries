@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:id="@+id/acPerfil"
     android:background="@color/bg"
     tools:context=".perfilUser">
 
@@ -32,7 +33,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.143"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView10" />
+        app:layout_constraintTop_toBottomOf="@+id/imgUser" />
 
     <Button
         android:id="@+id/btnsair"
@@ -47,7 +48,7 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
-        android:id="@+id/textView20"
+        android:id="@+id/nameUser"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
@@ -68,7 +69,7 @@
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.206"
-        app:layout_constraintStart_toEndOf="@+id/textView20"
+        app:layout_constraintStart_toEndOf="@+id/nameUser"
         app:layout_constraintTop_toBottomOf="@+id/emailUser" />
 
     <TextView
@@ -81,12 +82,12 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.136"
         app:layout_constraintStart_toEndOf="@+id/email_user"
-        app:layout_constraintTop_toBottomOf="@+id/imageView10" />
+        app:layout_constraintTop_toBottomOf="@+id/imgUser" />
 
     <ImageView
-        android:id="@+id/imageView10"
-        android:layout_width="178dp"
-        android:layout_height="203dp"
+        android:id="@+id/imgUser"
+        android:layout_width="174dp"
+        android:layout_height="189dp"
         android:layout_marginTop="60dp"
         android:contentDescription="@string/account_user"
         app:layout_constraintEnd_toEndOf="parent"
