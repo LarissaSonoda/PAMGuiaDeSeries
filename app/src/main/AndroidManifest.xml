@@ -4,6 +4,8 @@
 
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
     <uses-feature
         android:name="android.hardware.accelerometer"
@@ -16,7 +18,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.PAMGuiaSeries">
-        <activity android:name=".lojas"></activity>
+        <activity android:name=".VisualizarComments"></activity>
+        <activity android:name=".CommentsPro" />
+        <activity android:name=".seriesVistas" />
+        <activity android:name=".lojas" />
         <activity android:name=".perfilUser" />
         <activity android:name=".ActivityMonster" />
         <activity android:name=".MainActivity" />

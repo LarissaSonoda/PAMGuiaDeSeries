@@ -192,12 +192,6 @@ public class lojas extends AppCompatActivity implements FetchAddressTask.OnTaskC
     }
 
 
-  //  @SuppressLint("StringFormatMatches")
-   // public void buscar_loja (View v){
-      //  Intent it = new Intent(Intent.ACTION_WEB_SEARCH);
-       // it.putExtra(SearchManager.QUERY, "Lojas Geek próximas "+ lastAdress);
-       // startActivity(it);
-  //  }
 
     public void back(View view){
         Intent voltar = new Intent(this, MainActivity.class);

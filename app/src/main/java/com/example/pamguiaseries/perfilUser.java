@@ -9,8 +9,6 @@ import android.hardware.SensorManager;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.ImageButton;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -19,7 +17,7 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 public class perfilUser extends AppCompatActivity implements SensorEventListener {
     TextView textView1;
     Button button;
-    ImageView imageView;
+    Button imageView;
     SensorEventListener sensorEventListener;
     SensorManager sensorManager;
     Sensor sensor;
@@ -27,7 +25,7 @@ public class perfilUser extends AppCompatActivity implements SensorEventListener
     TextView textView2;
     TextView textView3;
     TextView textView4;
-    ImageButton btn_voltar;
+    Button btnComentar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,8 +37,8 @@ public class perfilUser extends AppCompatActivity implements SensorEventListener
         textView3=(TextView) findViewById(R.id.username);
         textView4=(TextView) findViewById(R.id.nameUser);
         button=(Button) findViewById(R.id.btnsair);
-        btn_voltar = (ImageButton) findViewById(R.id.btnVoltar4);
-        imageView= (ImageView) findViewById(R.id.imgUser);
+        btnComentar = (Button) findViewById(R.id.btnComments);
+        imageView= (Button) findViewById(R.id.imgPerfil);
         sensorManager= (SensorManager) getSystemService(Service.SENSOR_SERVICE);
         sensor = sensorManager.getDefaultSensor(Sensor.TYPE_LIGHT);
 
@@ -62,6 +60,11 @@ public class perfilUser extends AppCompatActivity implements SensorEventListener
         Intent voltar = new Intent(this, MainActivity.class);
         startActivity(voltar);
     }
+
+    public void ComentariosActivity(View view){
+        Intent comment = new Intent(this, seriesVistas.class);
+        startActivity(comment);
+    }
     public void btnSair(View view){
         Intent sair = new Intent(this, cadastro.class);
         startActivity(sair);
@@ -70,13 +73,27 @@ public class perfilUser extends AppCompatActivity implements SensorEventListener
     @Override
     public void onSensorChanged(SensorEvent event) {
         if(event.sensor.getType() == Sensor.TYPE_LIGHT){
-            if(event.values[0] > 2000){
+            if(event.values[0] < 20000){
                 textView1.setTextColor(getResources().getColor(R.color.white));
                 textView2.setTextColor(getResources().getColor(R.color.white));
                 textView3.setTextColor(getResources().getColor(R.color.white));
                 textView4.setTextColor(getResources().getColor(R.color.white));
                 activity.setBackgroundResource(R.color.bg2);
                 button.setBackgroundColor(getResources().getColor(R.color.amarelo_darkmode));
+                button.setTextColor(getResources().getColor(R.color.black));
+                btnComentar.setBackgroundColor(getResources().getColor(R.color.amarelo_darkmode));
+                btnComentar.setTextColor(getResources().getColor(R.color.black));
+            }
+            else{
+                textView1.setTextColor(getResources().getColor(R.color.black));
+                textView2.setTextColor(getResources().getColor(R.color.black));
+                textView3.setTextColor(getResources().getColor(R.color.black));
+                textView4.setTextColor(getResources().getColor(R.color.black));
+                activity.setBackgroundResource(R.color.bg);
+                button.setBackgroundColor(getResources().getColor(R.color.black));
+                button.setTextColor(getResources().getColor(R.color.white));
+                btnComentar.setBackgroundColor(getResources().getColor(R.color.black));
+                btnComentar.setTextColor(getResources().getColor(R.color.white));
             }
         }
     }

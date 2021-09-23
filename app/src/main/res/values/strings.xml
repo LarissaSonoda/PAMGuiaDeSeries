@@ -35,7 +35,10 @@
     <string name="assistir_no_disney">assistir no disney +</string>
     <string name="cadastro">Cadastro</string>
     <string name="digite_seu_nome">Digite seu nome</string>
+
+
     <string name="endereco_text">"Endereço: %1$s \n Latitude: %2$s \n Longitude: %3$s"</string>
+
     <string name="cancel_busca">Cancelar Busca</string>
     <string name="loading">Carregando…</string>
     <string name="digite_seu_email">Digite seu Email</string>
@@ -60,4 +63,16 @@
     <string name="nossos_parceiros">Nossos Parceiros</string>
     <string name="lojas_pr_ximas">Lojas Próximas</string>
     <string name="localiza_o">Localização</string>
+    <string name="meus_coment_rios">Meus comentários</string>
+    <string name="nome_da_s_rie">Nome da série:</string>
+    <string name="digite_o_nome_da_s_rie">Digite o nome da série</string>
+    <string name="coment_rio">Comentário:</string>
+    <string name="coloque_aqui_o_seu_coment_rio">Coloque aqui o seu comentário</string>
+    <string name="salvar">Salvar Interno</string>
+    <string name="salvar2">Salvar Externo</string>
+
+    <string name="show_button_public">Visualizar</string>
+    <string name="escolha_a_forma_de_armazenamento">Escolha a forma de armazenamento</string>
+    <string name="mudar_para_coment_rios_pro">Mudar para comentários pro</string>
+    <string name="visualizar_coment_rio">Visualizar comentário</string>
 </resources>
