@@ -9,3 +9,7 @@ Na tela de cadastro temos caixas de texto para que o usuário defina sua senha, 
 Nas telas das séries cadastradas vemos sinopse, avaliação, comentários e botões interativos para assistir ao trailer e ir ao streaming desejado.
 Em Eventos temos uma foto mostrando cada evento disponível com botões com as funções de agendar um evento na agenda do usuário (sua função é apenas abrir o app de agenda, a data, local, título e horário do evento o usuário deve informar manualmente) e de visualizar o local e rotas, podendo escolher um aplicativo de sua preferência para visualizar o endereço e as rotas.
 Na tela de perfil do usuário temos informações básicas, como o e-mail e o nome de usuário escolhido e um botão para sair da conta.
+
+Tela de Comentários (armazenamento interno) onde recuperamos o último comentário feito pelo usuário através do armazenamento interno e do armazenamento externo
+Tela de Lojas (localização) pega a localização do usuário (pede a permissão antes) e faz uma busca com Lojas Geeks próxima ao endereço obtido
+A localização faz o uso de shared preferences e saved Instance para recuperar os dados 
